@@ -6,7 +6,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>db",
+			"<leader>b",
 			function()
 				require("dap").toggle_breakpoint()
 			end,
