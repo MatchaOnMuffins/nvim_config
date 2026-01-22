@@ -63,6 +63,22 @@ return {
 				stopOnEntry = false,
 			},
 		}
+		dap.adapters.debugpy = {
+			type = "executable",
+			command = "python",
+			args = { "-m", "debugpy.adapter" },
+		}
+		dap.configurations.python = {
+			{
+				type = "debugpy",
+				request = "launch",
+				name = "Launch file",
+				program = "${file}",
+				pythonPath = function()
+					return "/usr/bin/python"
+				end,
+			},
+		}
 		require("dapui").setup()
 	end,
 }
